@@ -10,7 +10,11 @@ const initialState = {
 const filterSlice = createSlice({
     name:'filter',
     initialState,
-    reducers:{}
+    reducers:{
+
+       
+
+    }
 })
 
 export default filterSlice.reducer

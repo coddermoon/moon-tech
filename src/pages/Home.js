@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+
 import ProductCard from "../components/ProductCard";
 
 const Home = () => {
