@@ -13,6 +13,7 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader:()=> fetch('https://raw.githubusercontent.com/coddermoon/moon-tech/main/products.json')
       },
       {
         path: "about",
