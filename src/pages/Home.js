@@ -5,9 +5,9 @@ import ProductCard from "../components/ProductCard";
 const Home = () => {
 const [products,setProducts]= useState([])
 useEffect(() =>{
-  fetch('https://raw.githubusercontent.com/coddermoon/moon-tech/main/products.json')
+  fetch('http://localhost:5000/products')
   .then(res=>res.json())
-  .then(data=>setProducts(data))
+  .then(data=>setProducts(data.data))
 },[])
 
 console.log(products)

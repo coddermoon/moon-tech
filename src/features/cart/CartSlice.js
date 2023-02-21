@@ -10,6 +10,12 @@ const cartSlice = createSlice({
     initialState,
     reducers:{
 
+        addToCart : (state,action)=> {
+            const selectedProduct = action.payload
+            
+            if(selectedProduct)
+            state.cart.push({...action.payload,count:1})
+        }
 
     },
 })
