@@ -19,7 +19,7 @@ const disPatch = useDispatch()
 
 {
   pathname.includes('cart')&&(
-    <span className="w-4 h-4 absolute right-2 top-2 rounded-full">{product.quantity}</span>
+    <span className="w-8 h-8 absolute right-2 top-2 bg-indigo-900 rounded-full text-white font-bold flex items-center justify-center">{product.quantity}</span>
   )
 }
 
