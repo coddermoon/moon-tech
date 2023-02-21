@@ -1,9 +1,9 @@
 import React from "react";
 import { BiListPlus } from "react-icons/bi";
-import { MdDeleteForever } from "react-icons/md";
+
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { addToCart } from "../features/cart/CartSlice";
+import { addToCart, removeFromCart } from "../features/cart/CartSlice";
 
 const ProductCard = ({ product }) => {
   const {pathname}= useLocation()
@@ -64,21 +64,12 @@ const disPatch = useDispatch()
 
         {
           pathname.includes('cart')&& (
-            <button onClick={()=>disPatch(addToCart(product))} className='bg-red-500 rounded-full py-1 px-2 flex-1 text-white text-bold'>
-           Remove
+            <button onClick={()=>disPatch(removeFromCart(product))} className='bg-red-500 rounded-full py-1 px-2 flex-1 text-white text-bold'>
+           Remove Product
           </button>
           )
         }
-        {
-          pathname.includes('cart')&& (
-            <button
-            title='Add to wishlist'
-            className='bg-red-500  py-1 px-2 rounded-full'
-          >
-            <MdDeleteForever className='text-white ' />
-          </button>
-          )
-        }
+
 
 
 
