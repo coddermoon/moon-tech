@@ -11,10 +11,16 @@ const cartSlice = createSlice({
     reducers:{
 
         addToCart : (state,action)=> {
-            const selectedProduct = action.payload
+            const selectedProduct = state.cart.find(product=> product._id  !== action.payload._id)
+            if (!selectedProduct) {
+                const product = { ...action.payload , quantity:1}
+                state.cart.push(product)
+            }else{
+              selectedProduct.quantity += 1;
+              state.cart.filter(product=> product._id !== selectedProduct._id)
             
-            if(selectedProduct)
-            state.cart.push({...action.payload,count:1})
+            }
+           
         }
 
     },

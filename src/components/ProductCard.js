@@ -1,12 +1,13 @@
 import React from "react";
 import { BiListPlus } from "react-icons/bi";
+import { MdDeleteForever } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { addToCart } from "../features/cart/CartSlice";
 
 const ProductCard = ({ product }) => {
   const {pathname}= useLocation()
-  
+
 const disPatch = useDispatch()
 
 
@@ -29,8 +30,8 @@ const disPatch = useDispatch()
       <p className='text-center font-semibold mb-3'>Rating: {product.rating}</p>
       <div className=' flex-1'>
         <ul className='space-y-2'>
-          {product.keyFeature.map((feature) => {
-            return <li className='text-sm '>{feature}</li>;
+          {product.keyFeature.map((feature,index) => {
+            return <li key={index} className='text-sm '>{feature}</li>;
           })}
         </ul>
       </div>
@@ -72,9 +73,9 @@ const disPatch = useDispatch()
           pathname.includes('cart')&& (
             <button
             title='Add to wishlist'
-            className='bg-indigo-500  py-1 px-2 rounded-full'
+            className='bg-red-500  py-1 px-2 rounded-full'
           >
-            <BiListPlus className='text-white' />
+            <MdDeleteForever className='text-white ' />
           </button>
           )
         }
